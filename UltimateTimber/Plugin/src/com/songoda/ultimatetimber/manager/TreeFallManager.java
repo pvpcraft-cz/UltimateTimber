@@ -90,6 +90,16 @@ public class TreeFallManager extends Manager implements Listener {
             event.setCancelled(true);
         }
 
+        if(tool == null) {
+            isValid = false;
+            return;
+        }
+
+        if(tool.getType() == Material.AIR) {
+            isValid = false;
+            return;
+        }
+
         if (!treeDefinitionManager.isToolValidForAnyTreeDefinition(tool))
             isValid = false;
 
